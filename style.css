@@ -1,6 +1,7 @@
 html{
     scroll-behavior: smooth;
 }
+
 body{
     margin:0;
     padding: 0;
@@ -14,11 +15,13 @@ body{
     flex-flow: column;
     padding: 19px;
 }
+
 #header{
     text-align: center;
     display: flex;
     justify-content: space-evenly;
 }
+
 .number{
     width:63px;
     height:63px;
@@ -31,37 +34,32 @@ body{
     cursor: pointer;
     outline: none;
 }
+
 .yellow-numbers, .blue-numbers, .red-numbers,.purple-numbers,.green-numbers, .selected-combination{
-    
     margin-left: 30px;
     padding: 6px;
     display: flex;
     justify-content: flex-start;
 }
+
 .yellow{
-    background-color: yellow;
-    
-    
+    background-color: yellow;  
 }
+
 .red{
-    background-color: rgb(230, 4, 4);
-    
-    
+    background-color: rgb(230, 4, 4);  
 }
+
 .blue{
-    background-color:rgb(39, 39, 238);
-   
-    
+    background-color:rgb(39, 39, 238); 
 }
+
 .purple{
     background-color:rgb(150, 4, 150);
-    
     
 }
 .green{
     background-color:rgb(3, 235, 3);
- 
-    
 }
 
 .combination{
@@ -70,14 +68,14 @@ body{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    
 } 
+
 .combination p{
     font-size: 40px;
     font-weight: bold;
-    margin-right: 50px;
-   
+    margin-right: 50px;   
 }
+
 .bet{
     display: flex;
     justify-content:space-evenly;
@@ -88,8 +86,8 @@ label{
     font-size: 28px;
     font-weight: bold;
     font-family: sans-serif;
-    
 }
+
 #start{
     width: 200px;
     height: 40px;
@@ -99,10 +97,12 @@ label{
     font-weight: bold;
     outline: none;
 }
+
 a{
     text-decoration: none;
     color: black;
 }
+
 #bet-amount{
     width: 200px;
     height: 35px;
@@ -123,8 +123,8 @@ a{
     width:94%;
     margin: 10px auto;
     background-color: rgb(216, 212, 212);
-    
 }
+
 .drum-holder{
 display: flex;
 align-items: center;
@@ -141,6 +141,7 @@ justify-content: center;
     font-size: 140px;
     transition-duration: 0.7s
 }
+
 .balls-holder{
     margin: 30px auto;
 }
@@ -155,21 +156,21 @@ justify-content: center;
     justify-content: start;
     align-items: center;
     margin: 20px auto;
-    
 }
+
 .prize p{
     font-size: 40px;
     font-weight: bold;
     margin-left: 70px;
     margin-right: 50px;
-   
-   
 }
+
 .play-again{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .play-again button{
     width: 200px;
     height: 40px;
@@ -179,6 +180,7 @@ justify-content: center;
     font-weight: bold;
     outline: none;
 }
+
 .guessed-numbers{
     display: flex;
     justify-content: space-evenly;

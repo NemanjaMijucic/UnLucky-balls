@@ -58,7 +58,7 @@ function addNumber(selectedNum) {
 
     addColor(selectedNum, uiNumber);
 
-    console.log(combinationArr)
+
 }
 
 //add color to ui number
@@ -85,12 +85,10 @@ function removeNumber(selectedNum) {
     combinationArr.forEach((comb, index) => {
         if (comb === +selectedNum.innerText) {
             combinationArr.splice(index, 1);
-            console.log(comb)
         }
         if (selectedNum.classList[0] === 'number' && comb === +selectedNum.innerText) {
             selectedNum.classList.remove('gray');
             combinationContainer.removeChild(combinationContainer.childNodes[index + 1]);
-            console.log(combinationArr);
         }
     });
 }
