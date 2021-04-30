@@ -1,0 +1,247 @@
+const numbers = document.querySelectorAll('.number');
+const combinationContainer = document.querySelector('.combination');
+let combinationArr = [];
+const start = document.getElementById('start');
+const drum = document.querySelector('.drum');
+const drawedNumberBall = document.querySelectorAll('.ball');
+let drawedNumbers = [];
+const allNumbersDiv = document.querySelector('#all-numbers');
+let winningComb = [];
+const betAmount = document.querySelector('#bet-amount');
+const prize = document.querySelector('.prize');
+const money = document.querySelector('#money');
+const guessedNumbers = document.querySelector('.guessed-numbers');
+const playAgain = document.querySelector('.play-again');
+playAgain.style.visibility = 'hidden';
+
+//inserting numbers into buttons
+function insertNum() {
+    for (let i = 0; i < 80; i++) {
+        numbers[i].innerText = i + 1;
+    }
+}
+insertNum();
+
+//selecting numbers for draw
+numbers.forEach(function (number) {
+    number.addEventListener('click', function (e) {
+        const selectedNum = e.target;
+
+        if (combinationArr.length === 6) {
+            removeNumber(selectedNum);
+
+            return;
+        }
+
+        if (combinationArr.length <= 5) {
+            if (!combinationArr.includes(+selectedNum.innerText)) {
+                combinationArr.push(+selectedNum.innerText);
+                selectedNum.classList.add('gray');
+                addNumber(selectedNum);
+            } else {
+                removeNumber(selectedNum);
+            }
+        }
+
+
+
+    });
+});
+
+
+//add number to combination container div
+function addNumber(selectedNum) {
+    const uiNumber = document.createElement('button');
+    uiNumber.innerText = +selectedNum.innerText;
+    uiNumber.classList.add('number');
+    combinationContainer.appendChild(uiNumber);
+
+    addColor(selectedNum, uiNumber);
+
+    console.log(combinationArr)
+}
+
+//add color to ui number
+function addColor(selectedNum, uiNumber) {
+    if (selectedNum.classList.contains('yellow')) {
+        uiNumber.classList.add('yellow');
+    }
+    if (selectedNum.classList.contains('red')) {
+        uiNumber.classList.add('red');
+    }
+    if (selectedNum.classList.contains('green')) {
+        uiNumber.classList.add('green');
+    }
+    if (selectedNum.classList.contains('blue')) {
+        uiNumber.classList.add('blue');
+    }
+    if (selectedNum.classList.contains('purple')) {
+        uiNumber.classList.add('purple');
+    }
+}
+
+//remove number from combination container
+function removeNumber(selectedNum) {
+    combinationArr.forEach((comb, index) => {
+        if (comb === +selectedNum.innerText) {
+            combinationArr.splice(index, 1);
+            console.log(comb)
+        }
+        if (selectedNum.classList[0] === 'number' && comb === +selectedNum.innerText) {
+            selectedNum.classList.remove('gray');
+            combinationContainer.removeChild(combinationContainer.childNodes[index + 1]);
+            console.log(combinationArr);
+        }
+    });
+}
+
+//drawing of numbers
+
+
+start.addEventListener('click', function () {
+    if (betAmount.value > 100000 || isNaN(betAmount.value) || betAmount.value < 0 || betAmount.value === '') {
+        alert('place bet between 0 and 100000$');
+    } if (combinationArr.length < 6) {
+        alert('select six numbers');
+    }
+    else {
+        drawingNumbers();
+    }
+});
+
+function drawingNumbers() {
+
+    while (drawedNumbers.length < 20) {
+        let drawedNumber = Math.floor(Math.random() * 80) + 1;
+
+        if (!drawedNumbers.includes(drawedNumber)) {
+            drawedNumbers.push(drawedNumber);
+        }
+    }
+    for (let i = 0; i < drawedNumbers.length; i++) {
+        setTimeout(function () {
+            drum.innerText = drawedNumbers[i];
+            if (drawedNumbers[i] <= 16) {
+                drum.style.backgroundColor = 'yellow';
+            }
+            if (drawedNumbers[i] >= 17 && drawedNumbers[i] <= 32) {
+                drum.style.backgroundColor = 'rgb(230, 4, 4)';
+            }
+            if (drawedNumbers[i] >= 33 && drawedNumbers[i] <= 48) {
+                drum.style.backgroundColor = 'rgb(39, 39, 238)'
+            }
+            if (drawedNumbers[i] >= 49 && drawedNumbers[i] <= 64) {
+                drum.style.backgroundColor = 'rgb(150, 4, 150)';
+            }
+            if (drawedNumbers[i] > 65) {
+                drum.style.backgroundColor = 'rgb(3, 235, 3)';
+            }
+
+        }, 2000 * i);
+
+    }
+    setTimeout(insertingNumInBall, 2000);
+    start.disabled = true;
+
+    drawedNumbers.forEach(function (numb) {
+        combinationArr.forEach(function (selnumb) {
+            if (numb === selnumb) {
+                winningComb.push(selnumb);
+            }
+        });
+    });
+
+    /*function for winnings*/
+
+    setTimeout(function () {
+        if (winningComb.length < 1) {
+            money.innerText = 'No gusses, better luck next time :(';
+        }
+        if (winningComb.length === 1) {
+            let win = parseInt(betAmount.value) * 2;
+            colorDrawedNumbers();
+            money.innerText = `You won ${win} $, guessed number:`
+
+        }
+        if (winningComb.length === 2) {
+            let win = parseInt(betAmount.value) * 5;
+            colorDrawedNumbers();
+            money.innerText = `You won ${win} $, guessed numbers:`
+        }
+        if (winningComb.length === 3) {
+            let win = parseInt(betAmount.value) * 20;
+            colorDrawedNumbers();
+            money.innerText = `You won ${win} $, guessed numbers:`
+        }
+        if (winningComb.length === 4) {
+            let win = parseInt(betAmount.value) * 100;
+            colorDrawedNumbers();
+            money.innerText = `You won ${win} $, guessed numbers:`
+        }
+        if (winningComb.length === 5) {
+            let win = parseInt(betAmount.value) * 300;
+            colorDrawedNumbers();
+            money.innerText = `You won ${win} $, guessed numbers:`
+        }
+        if (winningComb.length === 6) {
+            let win = parseInt(betAmount.value) * 1000;
+            colorDrawedNumbers();
+            money.innerText = `You won ${win} $, guessed numbers:`
+        }
+
+        drum.style.visibility = 'hidden';
+        window.scrollTo(0, 900);
+        playAgain.style.visibility = 'visible';
+        playAgain.addEventListener('click', function () {
+            window.scrollTo(0, 0);
+            setTimeout(function () { location.reload() }, 500);
+        });
+    }, 40000);
+}
+
+function insertingNumInBall() {
+    for (let i = 0; i < drawedNumbers.length; i++) {
+        setTimeout(function () {
+            drawedNumberBall[i].innerText = drawedNumbers[i];
+            if (drawedNumbers[i] <= 16) {
+                drawedNumberBall[i].style.backgroundColor = 'yellow';
+            }
+            if (drawedNumbers[i] >= 17 && drawedNumbers[i] <= 32) {
+                drawedNumberBall[i].style.backgroundColor = 'rgb(230, 4, 4)';
+            }
+            if (drawedNumbers[i] >= 33 && drawedNumbers[i] <= 48) {
+                drawedNumberBall[i].style.backgroundColor = 'rgb(39, 39, 238)';
+            }
+            if (drawedNumbers[i] >= 49 && drawedNumbers[i] <= 64) {
+                drawedNumberBall[i].style.backgroundColor = 'rgb(150, 4, 150)';
+            }
+            if (drawedNumbers[i] >= 65) {
+                drawedNumberBall[i].style.backgroundColor = 'rgb(3, 235, 3)';
+            }
+        }, 2000 * i);
+    }
+}
+
+function colorDrawedNumbers() {
+    winningComb.forEach(function (wonNum) {
+        const winningNumb = document.createElement('button');
+        winningNumb.classList.add('number');
+        if (wonNum <= 16) {
+            winningNumb.style.backgroundColor = 'yellow';
+        }
+        if (wonNum >= 17 && wonNum <= 32) {
+            winningNumb.style.backgroundColor = 'rgb(230, 4, 4)';
+        }
+        if (wonNum >= 33 && wonNum <= 48) {
+            winningNumb.style.backgroundColor = 'rgb(39, 39, 238)';
+        }
+        if (wonNum >= 49 && wonNum <= 64) {
+            winningNumb.style.backgroundColor = 'rgb(150, 4, 150)';
+        }
+        if (wonNum > 65) {
+            winningNumb.style.backgroundColor = 'rgb(3, 235, 3)'
+        }
+        winningNumb.innerText = wonNum;
+        guessedNumbers.appendChild(winningNumb);
+    });
+}
