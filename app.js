@@ -13,6 +13,7 @@ const money = document.querySelector('#money');
 const guessedNumbers = document.querySelector('.guessed-numbers');
 const playAgain = document.querySelector('.play-again');
 playAgain.style.visibility = 'hidden';
+const drawDiv = document.querySelector('#draw');
 
 //inserting numbers into buttons
 function insertNum() {
@@ -105,6 +106,7 @@ start.addEventListener('click', function () {
     else {
         drawingNumbers();
     }
+    drawDiv.style.visibility = 'visible';
 });
 
 function drawingNumbers() {
