@@ -11,8 +11,8 @@ const betAmount = document.querySelector('#bet-amount');
 const prize = document.querySelector('.prize');
 const money = document.querySelector('#money');
 const guessedNumbers = document.querySelector('.guessed-numbers');
-const playAgain = document.querySelector('.play-again');
-playAgain.style.visibility = 'hidden';
+const ballsHolder = document.querySelector('.balls-holder');
+ballsHolder.style.visibility = 'hidden';
 const drawDiv = document.querySelector('#draw');
 
 //inserting numbers into buttons
@@ -106,7 +106,7 @@ start.addEventListener('click', function () {
     else {
         drawingNumbers();
     }
-    drawDiv.style.visibility = 'visible';
+    ballsHolder.style.visibility = 'visible';
 });
 
 function drawingNumbers() {

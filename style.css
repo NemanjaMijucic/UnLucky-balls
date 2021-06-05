@@ -126,7 +126,7 @@ a{
     width:94%;
     margin: 10px auto;
     background-color: rgb(216, 212, 212);
-    visibility: hidden;
+    /*visibility: hidden;*/
 }
 
 .drum-holder{
