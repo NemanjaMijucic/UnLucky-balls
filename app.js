@@ -14,6 +14,8 @@ const guessedNumbers = document.querySelector('.guessed-numbers');
 const ballsHolder = document.querySelector('.balls-holder');
 ballsHolder.style.visibility = 'hidden';
 const drawDiv = document.querySelector('#draw');
+const playAgain = document.querySelector('.play-again');
+playAgain.style.visibility = 'hidden';
 
 //inserting numbers into buttons
 function insertNum() {
@@ -82,6 +84,7 @@ function addColor(selectedNum, uiNumber) {
 }
 
 //remove number from combination container
+
 function removeNumber(selectedNum) {
     combinationArr.forEach((comb, index) => {
         if (comb === +selectedNum.innerText) {
@@ -89,13 +92,12 @@ function removeNumber(selectedNum) {
         }
         if (selectedNum.classList[0] === 'number' && comb === +selectedNum.innerText) {
             selectedNum.classList.remove('gray');
-            combinationContainer.removeChild(combinationContainer.childNodes[index + 1]);
+            combinationContainer.removeChild(combinationContainer.childNodes[index +1]);
         }
     });
 }
 
 //drawing of numbers
-
 
 start.addEventListener('click', function () {
     if (betAmount.value > 100000 || isNaN(betAmount.value) || betAmount.value < 0 || betAmount.value === '') {
@@ -103,7 +105,7 @@ start.addEventListener('click', function () {
     } if (combinationArr.length < 6) {
         alert('select six numbers');
     }
-    else {
+    else if(betAmount.value > 100000 || isNaN(betAmount.value) || betAmount.value < 0 || betAmount.value === '' || combinationArr.length === 6){
         drawingNumbers();
     }
     ballsHolder.style.visibility = 'visible';
