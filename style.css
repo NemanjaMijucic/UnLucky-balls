@@ -149,12 +149,14 @@ justify-content: center;
 .balls-holder{
     margin: 30px auto;
 }
+
 .balls{
     display: flex;
     align-items: center;
     justify-content: center;
     
 }
+
 .prize{
     display:flex;
     justify-content: start;

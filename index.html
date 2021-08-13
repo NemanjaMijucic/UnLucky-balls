@@ -1,140 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>UnLucky Balls</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <div id="all-numbers">
-            <div id="header">
-                <h1>UNLUCKY BALLS</h1>
-                <div class="bet">
-                    <div>
-                        <label for="bet">BET</label>
-                        <input type="number" id="bet-amount" min="1" max="99999" maxlength="5">
-                    </div>
-
-                    <button id="start"><a href="#draw">START</a></button>
-
-                </div>
-            </div>
-            <div class="yellow-numbers">
-                <button class="number yellow"></button>
-                <button class="number yellow"></button><button class="number yellow"></button><button
-                    class="number yellow"></button><button class="number yellow"></button><button
-                    class="number yellow"></button><button class="number yellow"></button><button
-                    class="number yellow"></button><button class="number yellow"></button><button
-                    class="number yellow"></button><button class="number yellow"></button><button
-                    class="number yellow"></button><button class="number yellow"></button><button
-                    class="number yellow"></button><button class="number yellow"></button><button
-                    class="number yellow"></button>
-            </div>
-            <div class="red-numbers">
-                <button class="number red"></button><button class="number red"></button><button
-                    class="number red"></button><button class="number red"></button><button
-                    class="number red"></button><button class="number red"></button><button
-                    class="number red"></button><button class="number red"></button><button
-                    class="number red"></button><button class="number red"></button><button
-                    class="number red"></button><button class="number red"></button><button
-                    class="number red"></button><button class="number red"></button><button
-                    class="number red"></button><button class="number red"></button>
-            </div>
-            <div class="blue-numbers">
-                <button class="number blue"></button><button class="number blue"></button><button
-                    class="number blue"></button><button class="number blue"></button><button
-                    class="number blue"></button><button class="number blue"></button><button
-                    class="number blue"></button><button class="number blue"></button><button
-                    class="number blue"></button><button class="number blue"></button><button
-                    class="number blue"></button><button class="number blue"></button><button
-                    class="number blue"></button><button class="number blue"></button><button
-                    class="number blue"></button><button class="number blue"></button>
+      <div id="all-numbers">
+        <div id="header">
+          <h1>UNLUCKY BALLS</h1>
+          <div class="bet">
+            <div>
+              <label for="bet">BET</label>
+              <input
+                type="number"
+                id="bet-amount"
+                min="1"
+                max="99999"
+                maxlength="5"
+              />
             </div>
 
-            <div class="purple-numbers">
-                <button class="number purple"></button><button class="number purple"></button><button
-                    class="number purple"></button><button class="number purple"></button><button
-                    class="number purple"></button><button class="number purple"></button><button
-                    class="number purple"></button><button class="number purple"></button><button
-                    class="number purple"></button><button class="number purple"></button><button
-                    class="number purple"></button><button class="number purple"></button><button
-                    class="number purple"></button><button class="number purple"></button><button
-                    class="number purple"></button><button class="number purple"></button>
-            </div>
-
-            <div class="green-numbers">
-                <button class="number green"></button><button class="number green"></button><button
-                    class="number green"></button><button class="number green"></button><button
-                    class="number green"></button><button class="number green"></button><button
-                    class="number green"></button><button class="number green"></button><button
-                    class="number green"></button><button class="number green"></button><button
-                    class="number green"></button><button class="number green"></button><button
-                    class="number green"></button><button class="number green"></button><button
-                    class="number green"></button><button class="number green"></button>
-            </div>
-           
-
+            <button id="start"><a href="#draw">START</a></button>
+          </div>
         </div>
-        <!--all numbers div end-->
-
-        <div id="draw">
-           
-              <!--selected numbers div-->
-            <div class="selected-combination">
-                <P>selected numbers:</P>  
-                <div class="combination">
-                  
-                </div>
-            </div>
-
-
-            <!--draw div-->
-
-            <div class="drum-holder">
-                <div class="drum"></div>
-            </div>
-
-            <div class="balls-holder">
-                <div class="balls">
-                    <button class="number ball"></button><button class="number ball"></button><button
-                        class="number ball"></button><button class="number ball"></button><button
-                        class="number ball"></button><button class="number ball"></button><button
-                        class="number ball"></button><button class="number ball"></button><button
-                        class="number ball"></button><button class="number ball"></button>
-                </div>
-                <div class="balls">
-                    <button class="number ball"></button><button class="number ball"></button><button
-                        class="number ball"></button><button class="number ball"></button><button
-                        class="number ball"></button><button class="number ball"></button><button
-                        class="number ball"></button><button class="number ball"></button><button
-                        class="number ball"></button><button class="number ball"></button>
-                </div>
-            </div>
-
-            <div class="prize">
-                <p id="money"></p>
-                <div class="guessed-numbers">
-
-                </div>
-
-            </div>
-
-            <div class="play-again">
-                <button><a href="#header">play again</a></button>
-            </div>
-
+        <div class="yellow-numbers">
+          <button class="number yellow"></button>
+          <button class="number yellow"></button
+          ><button class="number yellow"></button
+          ><button class="number yellow"></button
+          ><button class="number yellow"></button
+          ><button class="number yellow"></button
+          ><button class="number yellow"></button
+          ><button class="number yellow"></button
+          ><button class="number yellow"></button
+          ><button class="number yellow"></button
+          ><button class="number yellow"></button
+          ><button class="number yellow"></button
+          ><button class="number yellow"></button
+          ><button class="number yellow"></button
+          ><button class="number yellow"></button
+          ><button class="number yellow"></button>
         </div>
-        <!--end of draw div-->
+        
+        <div class="red-numbers">
+          <button class="number red"></button
+          ><button class="number red"></button
+          ><button class="number red"></button
+          ><button class="number red"></button
+          ><button class="number red"></button
+          ><button class="number red"></button
+          ><button class="number red"></button
+          ><button class="number red"></button
+          ><button class="number red"></button
+          ><button class="number red"></button
+          ><button class="number red"></button
+          ><button class="number red"></button
+          ><button class="number red"></button
+          ><button class="number red"></button
+          ><button class="number red"></button
+          ><button class="number red"></button>
+        </div>
+        <div class="blue-numbers">
+          <button class="number blue"></button
+          ><button class="number blue"></button
+          ><button class="number blue"></button
+          ><button class="number blue"></button
+          ><button class="number blue"></button
+          ><button class="number blue"></button
+          ><button class="number blue"></button
+          ><button class="number blue"></button
+          ><button class="number blue"></button
+          ><button class="number blue"></button
+          ><button class="number blue"></button
+          ><button class="number blue"></button
+          ><button class="number blue"></button
+          ><button class="number blue"></button
+          ><button class="number blue"></button
+          ><button class="number blue"></button>
+        </div>
 
+        <div class="purple-numbers">
+          <button class="number purple"></button
+          ><button class="number purple"></button
+          ><button class="number purple"></button
+          ><button class="number purple"></button
+          ><button class="number purple"></button
+          ><button class="number purple"></button
+          ><button class="number purple"></button
+          ><button class="number purple"></button
+          ><button class="number purple"></button
+          ><button class="number purple"></button
+          ><button class="number purple"></button
+          ><button class="number purple"></button
+          ><button class="number purple"></button
+          ><button class="number purple"></button
+          ><button class="number purple"></button
+          ><button class="number purple"></button>
+        </div>
+
+        <div class="green-numbers">
+          <button class="number green"></button
+          ><button class="number green"></button
+          ><button class="number green"></button
+          ><button class="number green"></button
+          ><button class="number green"></button
+          ><button class="number green"></button
+          ><button class="number green"></button
+          ><button class="number green"></button
+          ><button class="number green"></button
+          ><button class="number green"></button
+          ><button class="number green"></button
+          ><button class="number green"></button
+          ><button class="number green"></button
+          ><button class="number green"></button
+          ><button class="number green"></button
+          ><button class="number green"></button>
+        </div>
+      </div>
+      <!--all numbers div end-->
+
+      <div id="draw">
+        <!--selected numbers div-->
+        <div class="selected-combination">
+          <p>selected numbers:</p>
+          <div class="combination"></div>
+        </div>
+
+        <!--draw div-->
+
+        <div class="drum-holder">
+          <div class="drum"></div>
+        </div>
+
+        <div class="balls-holder">
+          <div class="balls">
+            <button class="number ball"></button>
+            <button class="number ball"></button>
+            <button class="number ball"></button>
+            <button class="number ball"></button>
+            <button class="number ball"></button>
+            <button class="number ball"></button>
+            <button class="number ball"></button>
+            <button class="number ball"></button>
+            <button class="number ball"></button>
+            <button class="number ball"></button>
+          </div>
+          <div class="balls">
+            <button class="number ball"></button
+            ><button class="number ball"></button
+            ><button class="number ball"></button
+            ><button class="number ball"></button
+            ><button class="number ball"></button
+            ><button class="number ball"></button
+            ><button class="number ball"></button
+            ><button class="number ball"></button
+            ><button class="number ball"></button
+            ><button class="number ball"></button>
+          </div>
+        </div>
+
+        <div class="prize">
+          <p id="money"></p>
+          <div class="guessed-numbers"></div>
+        </div>
+
+        <div class="play-again">
+          <button><a href="#header">play again</a></button>
+        </div>
+      </div>
+      <!--end of draw div-->
     </div>
     <!--end wrapper-->
 
     <script src="app.js"></script>
-</body>
-
+  </body>
 </html>

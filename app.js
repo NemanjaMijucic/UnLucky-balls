@@ -17,7 +17,7 @@ const drawDiv = document.querySelector('#draw');
 const playAgain = document.querySelector('.play-again');
 playAgain.style.visibility = 'hidden';
 
-//inserting numbers into buttons
+//inserting numbers into buttons 
 function insertNum() {
     for (let i = 0; i < 80; i++) {
         numbers[i].innerText = i + 1;
@@ -32,7 +32,6 @@ numbers.forEach(function (number) {
 
         if (combinationArr.length === 6) {
             removeNumber(selectedNum);
-
             return;
         }
 
@@ -102,10 +101,13 @@ function removeNumber(selectedNum) {
 start.addEventListener('click', function () {
     if (betAmount.value > 100000 || isNaN(betAmount.value) || betAmount.value < 0 || betAmount.value === '') {
         alert('place bet between 0 and 100000$');
+        
     } if (combinationArr.length < 6) {
         alert('select six numbers');
+        
     }
     else if(betAmount.value > 100000 || isNaN(betAmount.value) || betAmount.value < 0 || betAmount.value === '' || combinationArr.length === 6){
+       
         drawingNumbers();
     }
     ballsHolder.style.visibility = 'visible';
@@ -196,7 +198,7 @@ function drawingNumbers() {
         playAgain.style.visibility = 'visible';
         playAgain.addEventListener('click', function () {
             window.scrollTo(0, 0);
-            setTimeout(function () { location.reload() }, 500);
+            setTimeout(function () { window.location.reload() }, 500);
         });
     }, 40000);
 }
