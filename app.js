@@ -17,6 +17,12 @@ const drawDiv = document.querySelector('#draw');
 const playAgain = document.querySelector('.play-again');
 playAgain.style.visibility = 'hidden';
 
+const modalBg = document.querySelector('.modal-bg');
+const modal = document.querySelector('.modal');
+const modalText = document.querySelector('.modal-text');
+const closeBtn = document.querySelector('.close-btn')
+
+
 //inserting numbers into buttons 
 function insertNum() {
     for (let i = 0; i < 80; i++) {
@@ -91,7 +97,7 @@ function removeNumber(selectedNum) {
         }
         if (selectedNum.classList[0] === 'number' && comb === +selectedNum.innerText) {
             selectedNum.classList.remove('gray');
-            combinationContainer.removeChild(combinationContainer.childNodes[index +1]);
+            combinationContainer.removeChild(combinationContainer.childNodes[index]);
         }
     });
 }
@@ -100,10 +106,10 @@ function removeNumber(selectedNum) {
 
 start.addEventListener('click', function () {
     if (betAmount.value > 100000 || isNaN(betAmount.value) || betAmount.value < 0 || betAmount.value === '') {
-        alert('place bet between 0 and 100000$');
+        modalAlert('please place bet between 1 and 10000')
         
     } if (combinationArr.length < 6) {
-        alert('select six numbers');
+        modalAlert('please select six numbers')
         
     }
     else if(betAmount.value > 100000 || isNaN(betAmount.value) || betAmount.value < 0 || betAmount.value === '' || combinationArr.length === 6){
@@ -197,8 +203,7 @@ function drawingNumbers() {
         window.scrollTo(0, 900);
         playAgain.style.visibility = 'visible';
         playAgain.addEventListener('click', function () {
-            window.scrollTo(0, 0);
-            setTimeout(function () { window.location.reload() }, 500);
+            setTimeout(function () { window.location.reload(); window.scrollTo(0, 0); }, 500);
         });
     }, 40000);
 }
@@ -249,3 +254,17 @@ function colorDrawedNumbers() {
         guessedNumbers.appendChild(winningNumb);
     });
 }
+
+/* function for modal alert*/
+
+function modalAlert(text) {
+   modalBg.classList.add('modal-active')
+   modalText.innerText = text;
+   closeBtn.addEventListener('click', modalClose)
+}
+
+function modalClose(){
+    modalBg.classList.remove('modal-active')
+    window.scrollTo(0,0);
+}
+

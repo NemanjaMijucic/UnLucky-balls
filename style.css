@@ -10,6 +10,7 @@ body{
     margin:0;
     padding: 0;
     background-color: rgb(216, 212, 212);
+    font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper{
@@ -125,34 +126,6 @@ a{
 .gray{
     background-color: lavenderblush;
 }
-/*modal css */
-#modal{
-    margin: 0 auto;
-    width: 90%;
-    height: 70%;
-    font-size: 24px;
-    color: white;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    vertical-align:middle;
-    text-align: center;
-}
-
-#close-btn{
-    width: 200px;
-    height: 35px;
-    border-radius: 10px;
-    font-size: 20px;
-    text-align: center;
-    padding: 0;
-   margin-right: 25px;
-   outline: none;
-}
-
-.show{
-    visibility: hidden;
-}
 
 /*draw page css*/
 #draw{
@@ -230,6 +203,59 @@ justify-content: center;
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+
+/*modal css*/
+
+.modal-bg{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0%, opacity 0.5s;
+    
+}
+
+.modal-active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal{
+    width: 40%;
+    height: 30%;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    
+
+}
+.modal-text{
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 0;
+    
+}
+
+.modal button{
+    width: 40%;
+    height: 25px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    padding: 0;
+    margin-right: 25px;
+    outline: none;
 }
 
 @media only screen and (max-width: 700px){
