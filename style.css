@@ -2,6 +2,10 @@ html{
     scroll-behavior: smooth;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 body{
     margin:0;
     padding: 0;
@@ -34,6 +38,7 @@ body{
     font-weight: bold;
     cursor: pointer;
     outline: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .yellow-numbers, .blue-numbers, .red-numbers,.purple-numbers,.green-numbers, .selected-combination{
@@ -119,6 +124,34 @@ a{
 
 .gray{
     background-color: lavenderblush;
+}
+/*modal css */
+#modal{
+    margin: 0 auto;
+    width: 90%;
+    height: 70%;
+    font-size: 24px;
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    vertical-align:middle;
+    text-align: center;
+}
+
+#close-btn{
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    padding: 0;
+   margin-right: 25px;
+   outline: none;
+}
+
+.show{
+    visibility: hidden;
 }
 
 /*draw page css*/
