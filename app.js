@@ -16,6 +16,7 @@ ballsHolder.style.visibility = 'hidden';
 const drawDiv = document.querySelector('#draw');
 const playAgain = document.querySelector('.play-again');
 playAgain.style.visibility = 'hidden';
+const title = document.getElementById('title');
 
 const modalBg = document.querySelector('.modal-bg');
 const modal = document.querySelector('.modal');
@@ -30,6 +31,8 @@ function insertNum() {
     }
 }
 insertNum();
+
+
 
 //selecting numbers for draw
 numbers.forEach(function (number) {
