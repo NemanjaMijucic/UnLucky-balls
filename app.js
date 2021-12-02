@@ -107,9 +107,11 @@ function removeNumber(selectedNum) {
 start.addEventListener('click', function () {
     if (betAmount.value > 100000 || isNaN(betAmount.value) || betAmount.value < 0 || betAmount.value === '') {
         modalAlert('please place bet between 1 and 10000')
+        return
         
     } if (combinationArr.length < 6) {
         modalAlert('please select six numbers')
+        return
         
     }
     else if(betAmount.value > 100000 || isNaN(betAmount.value) || betAmount.value < 0 || betAmount.value === '' || combinationArr.length === 6){

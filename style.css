@@ -256,6 +256,7 @@ input::-webkit-inner-spin-button {
     padding: 0;
     margin-right: 25px;
     outline: none;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 700px){
@@ -268,9 +269,23 @@ input::-webkit-inner-spin-button {
     #start{
         width:auto;
     }
+    .drum{
+        height: 180px;
+        width: 180px;
+        border: 1px solid black;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 180px;
+        font-size: 90px;
+        transition-duration: 0.7s
+    }
     .number{
-        width:auto;
-        height: auto;
+        width:22px;
+        height: 22px;
+        font-size: 10px;
+        font-weight: 100;
+        text-align: center;
+        line-height: 22px;
     }
     #all-numbers{
         display: block;
