@@ -233,6 +233,7 @@ input::-webkit-inner-spin-button {
 .modal{
     width: 40%;
     height: 30%;
+    padding: 20px;
     background-color: white;
     display: flex;
     justify-content: space-around;
@@ -243,8 +244,14 @@ input::-webkit-inner-spin-button {
     
 
 }
+#rules{
+    margin-left: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
 .modal-text{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 0;
     

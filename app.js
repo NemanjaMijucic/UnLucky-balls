@@ -21,8 +21,13 @@ const title = document.getElementById('title');
 const modalBg = document.querySelector('.modal-bg');
 const modal = document.querySelector('.modal');
 const modalText = document.querySelector('.modal-text');
-const closeBtn = document.querySelector('.close-btn')
+const closeBtn = document.querySelector('.close-btn');
+const rules = document.getElementById('rules');
 
+//rules div
+rules.addEventListener('click', function() {
+    modalAlert('Pick six numbers out of eighty and place a bet beetween $1 to $10000. Based on guessed numbers your winnings are multiplied')
+})
 
 //inserting numbers into buttons 
 function insertNum() {
@@ -109,7 +114,7 @@ function removeNumber(selectedNum) {
 
 start.addEventListener('click', function () {
     if (betAmount.value > 100000 || isNaN(betAmount.value) || betAmount.value < 0 || betAmount.value === '') {
-        modalAlert('please place bet between 1 and 10000')
+        modalAlert('please place bet between $1 and $10000')
         return
         
     } if (combinationArr.length < 6) {
